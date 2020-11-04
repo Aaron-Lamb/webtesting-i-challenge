@@ -20,4 +20,25 @@ describe("Enhancer unit tests", () => {
             durability: 100
         })
     })
+
+    it("Succeeds enhancement", () => {
+        expect(enhancer.success({
+            name: "Bowl",
+            enhancement: 20,
+            durability: 68
+        })).toEqual({
+            name: "Bowl",
+            enhancement: 20,
+            durability: 68
+        })
+        expect(enhancer.success({
+            name: "Bowl",
+            enhancement: 17,
+            durability: 68
+        })).toEqual({
+            name: "Bowl",
+            enhancement: 18,
+            durability: 68
+        })
+    })
 })
