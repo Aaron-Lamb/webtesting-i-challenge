@@ -1,2 +1,4 @@
 const enhancer = require('./enhancer.js');
-// test away!
+describe("Enhancer unit tests", () => {
+    
+})
