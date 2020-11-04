@@ -40,5 +40,53 @@ describe("Enhancer unit tests", () => {
             enhancement: 18,
             durability: 68
         })
+        expect(enhancer.success({
+            name: "Bowl",
+            enhancement: 200,
+            durability: 68
+        })).toEqual({
+            name: "Bowl",
+            enhancement: 200,
+            durability: 68
+        })
+    })
+
+    it("fails enhancement", () => {
+        expect(enhancer.fail({
+            name: "Bowl",
+            enhancement: 14,
+            durability: 68
+        })).toEqual({
+            name: "Bowl",
+            enhancement: 14,
+            durability: 63
+        })
+        expect(enhancer.fail({
+            name: "Bowl",
+            enhancement: 20,
+            durability: 68
+        })).toEqual({
+            name: "Bowl",
+            enhancement: 19,
+            durability: 58
+        })
+        expect(enhancer.fail({
+            name: "Bowl",
+            enhancement: 16,
+            durability: 68
+        })).toEqual({
+            name: "Bowl",
+            enhancement: 16,
+            durability: 58
+        })
+        expect(enhancer.fail({
+            name: "Bowl",
+            enhancement: 15,
+            durability: 68
+        })).toEqual({
+            name: "Bowl",
+            enhancement: 15,
+            durability: 58
+        })
     })
 })
